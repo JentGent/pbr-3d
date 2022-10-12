@@ -1,11 +1,7 @@
-# 3d-refactor
-i refactored the
+# PBR-3D
+3D engine made with WebGL that uses physically based rendering: Schlick's approximation (fresnel), Trowbridge-Reitz distribution (microfacets), and Schlick-GGX geometry approximation plugged into the Cook-Torrance bidirectional reflectance distribution function (BRDF) model.
+Features normal-oriented hemisphere screen space ambient occlusion (sample locations randomized per pixel) and shadow mapping.
 
-# the 3d engine it
-wow! i refactored the  
-i did the webgl but it now it now it yo it  
-
-############ webgl2 required, matrices, different ambient occlusion, no more custom webgl library (it is bad), other stuff probably
-## i am going to learn to start using vbos someday
-
-# Among Us!
+## [Demo](https://rawcdn.githack.com/JentGent/pbr-3d/main/index.html)
+Sphere materials are more metallic towards the left and rougher towards the top
+![pbr](https://github.com/JentGent/pbr-3d/blob/main/pbr.gif)
