@@ -3,5 +3,6 @@
 Features normal-oriented hemisphere screen space ambient occlusion (sample locations randomized per pixel) and shadow mapping.
 
 ## [Demo](https://rawcdn.githack.com/JentGent/pbr-3d/main/index.html)
-Sphere materials are more metallic towards the left and rougher towards the top
+Sphere materials are more metallic towards the left and rougher towards the top  
+
 ![pbr](https://github.com/JentGent/pbr-3d/blob/main/pbr.gif)
