@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+ * Jentacular Gent
+ * physically based rendering
+-->
+
+<html oncontextmenu = "return false">
+    <head>
+        <meta charset="utf-8">
+        <title>physically based rendering</title>
+        <style>
+            #render {
+                display: none;
+            }
+            #display {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="render" width="600" height="600"></canvas>
+        <canvas id="display" width="600" height="600"></canvas>
+    </body>
+    <script src="shaders/prepass.js"></script>
+    <script src="shaders/color.js"></script>
+    <script src="shaders/shadow.js"></script>
+    <script src="shaders/sky.js"></script>
+    <script src="vector.js"></script>
+    <script src="webgl utilities.js"></script>
+    <script src="geometry utilities.js"></script>
+    <script src="world.js"></script>
+    <script src="set up programs.js"></script>
+    <script src="render.js"></script>
+
+    <script type>
+        const START_TIME = Date.now();
+        let pm = Date.now(), frameRate = Date.now() - pm;
+        if(parent.tm) { clearTimeout(parent.tm); }
+        function run() {
+            parent.raf = requestAnimationFrame(run);
+            frameRate = Date.now() - pm;
+            pm = Date.now();
+            update(frameRate * 0.1);
+            if(!THERE_WAS_AN_ERROR) { draw(frameRate * 0.1, (pm - START_TIME) * 0.1); }
+            ctx.drawImage(c, 0, 0, 600, 600);
+            ctx.font = "20px Helvetica";
+            ctx.fillStyle = "white";
+            ctx.fillText(Math.round(frameRate) + " ms", 5, can.height - 5);
+        }
+        if(parent.raf) { cancelAnimationFrame(parent.raf); }
+        run();
+    </script>
+    <script></script>
+</html>
